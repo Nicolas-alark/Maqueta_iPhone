@@ -1,44 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
 
 function App() {
   const objetoinc = {
     enlace: "https://locate.apple.com/co/es/",
     enlace2: "https://www.apple.com/choose-country-region/",
-    enalce3: "https://www.apple.com/legal/privacy/es-la/",
+    enlace3: "https://www.apple.com/legal/privacy/es-la/",
     enlace4: "https://www.apple.com/legal/",
     enlace5: "https://www.apple.com/co/sitemap/",
     parrafo: "Copyright © 2025 Apple Inc. Todos los derechos reservados.",
-    parrafo1: "Politica de privacidad",
+    parrafo1: "Política de privacidad",
     parrafo2: "Aviso legal",
     parrafo3: "Mapa del sitio"
   };
 
-
-
   return (
-    <>
-        <section class="ac-gf-footer">
-              <div class="ac-gf-footer-shop">
-                  <a href={objetoinc.enlace} data-analytics-title="other retailers or resellers" data-analytics-exit-link="">Busca un distribuidor</a>
-                  &nbsp; Cerca a ti. 
-              </div>
+    <footer className="ac-footer">
+      {/* Distribuidor */}
+      <div className="footer-top">
+        <div className="footer-distributor">
+          <a href={objetoinc.enlace}>Busca un distribuidor</a> cerca de ti.
+        </div>
+      </div>
 
-              <div>
-                <a href={objetoinc.enlace2} title='Elige tu país o región' aria-label="Colombia. Elige tu país o región" data-analytics-title="Chooes your country " >Colombia
-                </a>
-              </div>
-              <div>{objetoinc.parrafo}</div>
-              <ul>
-                <li> <a href={objetoinc.enalce3} data-analytics-title="privacy police">{objetoinc.parrafo1}</a></li>
-                <li><a href={objetoinc.enlace4} data-analytics-title="legal"> {objetoinc.parrafo2} </a></li>
-                <li><a href={objetoinc.enlace5} data-analytics-title="map">{objetoinc.parrafo3}</a></li>
-              </ul>
-        </section>
-    </>
-  )
+      <hr className="footer-separator" />
+
+      {/* Enlaces legales, copyright y país */}
+      <div className="footer-bottom">
+        <ul className="footer-links">
+          <li><a href={objetoinc.enlace3}>{objetoinc.parrafo1}</a></li>
+          <li><a href={objetoinc.enlace4}>{objetoinc.parrafo2}</a></li>
+          <li><a href={objetoinc.enlace5}>{objetoinc.parrafo3}</a></li>
+        </ul>
+
+        <div className="footer-copy">{objetoinc.parrafo}</div>
+
+        <div className="footer-country">
+          <a href={objetoinc.enlace2}>Colombia</a>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
-export default App
+export default App;
